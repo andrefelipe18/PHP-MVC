@@ -1,0 +1,21 @@
+{
+    "name": "dre/mvc0",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Dre\\Mvc0\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "andrefelipe18",
+            "email": "dominguesstroppa@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.11"
+    }
+}
