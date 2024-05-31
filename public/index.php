@@ -1,10 +1,17 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-
-$dotenv = new Dotenv\Dotenv::createImmutable(dirname(__DIR__, 1));
-$dotenv->load();
-
 session_start();
 
-echo $_ENV['DB_HOST'];
+require __DIR__ . '/../vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
+
+$app = new \Core\AppExtract();
+$controller = $app->controller();
+
+var_dump($controller);
+
+//require __DIR__ . '/../app/Views/layout.views.php';
