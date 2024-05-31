@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Core\Database\ActiveRecord;
 
-use App\Contracts\Database\ActiveRecord\ActiveRecordContract;
-use App\Contracts\Database\ActiveRecord\ActiveRecordExecuteContract;
-use App\Database\Connection\DatabaseConnection;
+use Core\Contracts\Database\ActiveRecord\ActiveRecordContract;
+use Core\Contracts\Database\ActiveRecord\ActiveRecordExecuteContract;
+use Core\Database\Connection\DatabaseConnection;
 use Exception;
 use PDO;
 use RuntimeException;

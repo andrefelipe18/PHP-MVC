@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Core\Database\ActiveRecord;
 
-use App\Contracts\Database\ActiveRecord\ActiveRecordContract;
-use App\Contracts\Database\ActiveRecord\ActiveRecordExecuteContract;
+use Core\Contracts\Database\ActiveRecord\ActiveRecordContract;
+use Core\Contracts\Database\ActiveRecord\ActiveRecordExecuteContract;
 use ReflectionClass;
 
 abstract class ActiveRecord implements ActiveRecordContract
