@@ -10,6 +10,7 @@ class AppExtract
     private string $method = 'index';
     /** @var array<string, mixed>  */
     private array $params = [];
+    private const int SLICE_INDEX_START_FROM = 2;
 
     public function controller(): string
     {
@@ -45,6 +46,8 @@ class AppExtract
      */
     public function params(): array
     {
+        $this->params = array_slice($this->uri, self::SLICE_INDEX_START_FROM, count($this->uri));
 
+        return $this->params;
     }
 }
