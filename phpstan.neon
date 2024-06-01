@@ -2,4 +2,6 @@ parameters:
     level: max
     paths:
         - app
-    ignoreErrors:%
+        - core
+    ignoreErrors:
+        - "V"
