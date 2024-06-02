@@ -5,7 +5,10 @@
         "psr-4": {
             "App\\": "app/",
             "Core\\": "core/"
-        }
+        },
+        "files": [
+            "app/Helpers/constants.php"
+        ]
     },
     "authors": [
         {
