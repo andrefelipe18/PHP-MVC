@@ -5,9 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $title; ?></title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
-    <?php echo $content; ?>
+    <h1>Data</h1>
+
+    <div>
+        <?php require $controller->view; ?>
+    </div>
 </body>
 </html>

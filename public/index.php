@@ -14,10 +14,11 @@ $controller = $app->controller();
 $method = $app->method();
 $params = $app->params();
 
-var_dump($controller);
-echo '<br>';
-var_dump($method);
-echo '<br>';
-var_dump($params);  
+$controller = new $controller();
+$controller->$method($params);
 
-//require __DIR__ . '/../app/Views/layout.views.php';
+if($_SERVER['REQUEST_METHOD'] === 'GET'){
+    extract($controller->data);
+    require __DIR__ . '/../app/Views/layout.views.php';
+}
+
