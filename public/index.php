@@ -6,6 +6,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Dotenv\Dotenv;
 
+$whoops = new \Whoops\Run;
+$whoops->allowQuit(false);
+$whoops->writeToOutput(false);
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+
 try {
     $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
     $dotenv->load();
@@ -31,6 +36,7 @@ try {
         require __DIR__ . '/../app/Views/layout.views.php';
     }
 } catch (\Throwable $e) {
-    echo $e->getMessage();
+    $html = $whoops->handleException($e);
+    echo $html;
 }
 
