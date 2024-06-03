@@ -10,6 +10,7 @@ class Home
     {
         $this->view = 'home.php';
         $this->data = [
+            'title' => 'Home',
             'name' => 'John Doe',
         ];
     }
