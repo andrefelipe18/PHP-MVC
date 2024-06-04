@@ -8,13 +8,13 @@ class Application
 {
     private $controller;
     public function __construct(
-        private ControllerContract $controllerContract
+        private readonly ControllerContract $controllerContract
     ){}
 
     public function controllerResolve(): Application
     {
         $controller = $this->controllerContract->controller();
-        $method = $this->controllerContract->method();
+        $method = $this->controllerContract->method($controller);
         $params = $this->controllerContract->params();
 
         $this->controller = new $controller();
@@ -22,7 +22,7 @@ class Application
         return $this;
     }
 
-    public function viewResolve()
+    public function viewResolve(): void
     {
         if($_SERVER['REQUEST_METHOD'] === 'GET'){
             if(!isset($this->controller->data)){

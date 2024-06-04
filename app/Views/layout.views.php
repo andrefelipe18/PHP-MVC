@@ -8,10 +8,10 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <h1>Data</h1>
+    <h1>Layout</h1>
 
     <div>
-        <?php require $controller->view; ?>
+        <?php require VIEW_PATH . $this->controller->view; ?>
     </div>
 </body>
 </html>
