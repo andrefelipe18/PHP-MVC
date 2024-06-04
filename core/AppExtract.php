@@ -2,7 +2,9 @@
 
 namespace Core;
 
-class AppExtract
+use Core\Contracts\ControllerContract;
+
+class AppExtract implements ControllerContract
 {
     /** @var array<string>  */
     public array $uri = [];
