@@ -3,18 +3,9 @@
 session_start();
 
 require __DIR__ . '/../vendor/autoload.php';
-
-use Dotenv\Dotenv;
-
-$whoops = new \Whoops\Run;
-$whoops->allowQuit(false);
-$whoops->writeToOutput(false);
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+require __DIR__ . '/bootstrap.php';
 
 try {
-    $dotenv = Dotenv::createImmutable(__DIR__ . '/..');
-    $dotenv->load();
-
     $app = new \Core\AppExtract();
     $controller = $app->controller();
     $method = $app->method();
